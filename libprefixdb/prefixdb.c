@@ -101,6 +101,7 @@ int prefixdb_import(char *list, char *database)
     PREFIXDB *pfdb = prefixdb_allocate();
 
     return prefixdb_add_file(pfdb, list) == PREFIXDB_ERROR_OK &&
+           printf("add file ok");
            prefixdb_save_file(pfdb, database) == PREFIXDB_ERROR_OK &&
            prefixdb_free(&pfdb) == PREFIXDB_ERROR_OK ? 0 : 1;
 }
